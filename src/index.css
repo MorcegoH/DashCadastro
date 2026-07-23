@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: 'Montserrat', sans-serif;
+  --color-brand-primary: #005b2e;
+  --color-brand-secondary: #00e854;
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/70 dark:bg-[#1e293b]/70 backdrop-blur-xl border border-white/50 dark:border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] rounded-2xl;
+  }
+  
+  .glass-input {
+    @apply bg-white/40 dark:bg-black/20 backdrop-blur-md border border-white/40 dark:border-white/10 rounded-xl shadow-[inset_0_2px_4px_rgba(0,0,0,0.05)] dark:shadow-[inset_0_2px_4px_rgba(0,0,0,0.2)] focus:outline-none focus:ring-2 focus:ring-brand-secondary/50 focus:border-brand-secondary/50 transition-all duration-300;
+  }
+
+  /* Custom simple animations */
+  .animate-in {
+    animation-duration: 0.7s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .fade-in.slide-in-from-bottom-4 {
+    animation-name: fadeInSlideUp;
+  }
+  
+  .fade-in.zoom-in-95 {
+    animation-name: fadeInZoomIn;
+  }
+}
+
+@keyframes fadeInSlideUp {
+  from { opacity: 0; transform: translateY(2rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInZoomIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}

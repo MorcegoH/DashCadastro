@@ -1,0 +1,6 @@
+{
+  "name": "ADARCO Analytics",
+  "description": "Dashboard para análise de desempenho e importação de planilhas de produtividade, com visualização de dados via gráficos e métricas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
